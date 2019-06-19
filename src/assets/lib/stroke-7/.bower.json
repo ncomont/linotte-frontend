@@ -1,0 +1,13 @@
+{
+  "name": "stroke-7",
+  "homepage": "https://github.com/miguelmich/stroke7",
+  "_release": "8f40b28112",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8f40b28112a6626c66c23420f0894ae2c2503c87"
+  },
+  "_source": "git://github.com/miguelmich/stroke7.git",
+  "_target": "master",
+  "_originalSource": "git://github.com/miguelmich/stroke7"
+}

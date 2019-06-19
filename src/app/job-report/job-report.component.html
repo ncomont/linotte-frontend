@@ -1,0 +1,35 @@
+<app-job-report-statistics
+	[stats$]="this.stats$"
+	(changeState)="onChangeState($event)"
+></app-job-report-statistics>
+
+<div class="panel panel-default panel-table">
+	<div class="panel-heading">Taxon à résoudre</div>
+	<div class="panel-body">
+		<table class="table table-sm table-striped">
+			<thead>
+				<tr>
+					<th>Données recherchées</th>
+					<th class="actions"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let item of (this.page$ | async)">
+					<td>
+						<ul class="search-data">
+							<li *ngFor="let entry of item.searchData | keys">
+								<span class="field">{{ entry.key }}</span>
+								<span>{{ entry.value }}</span>
+							</li>
+						</ul>
+					</td>
+					<td>
+						<button class="btn btn-secondary btn-block" (click)="edit(item)">
+							<i class="icon icon-left s7-light"></i> Résoudre
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

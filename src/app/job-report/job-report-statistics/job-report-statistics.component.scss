@@ -1,0 +1,63 @@
+@import 'app';
+
+.usage {
+	background-color: $light-color;
+	padding: 20px 20px 35px;
+	margin-bottom: $widget-margin-bottom;
+	color: $white-color;
+
+	.usage-head {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1rem;
+
+		.usage-head-title {
+			flex: 1;
+			font-size: 1.38462rem;
+			color: $light-color;
+		}
+	}
+
+	.usage-resume {
+		display: flex;
+		padding-top: 0.615385rem;
+
+		.usage-data {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+
+			.usage-detail {
+				color: $light-color;
+			}
+
+			.usage-counter {
+				font-size: 2.76923rem;
+				color: $light-color;
+			}
+		}
+
+		.usage-icon {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+
+			.icon {
+				font-size: 3.69231rem;
+				color: $light-color;
+			}
+		}
+	}
+
+	&.usage-info {
+		background-color: $info-color;
+	}
+
+	&.usage-primary {
+		background-color: $success-color;
+	}
+
+	&.usage-danger {
+		background-color: $danger-color;
+	}
+}

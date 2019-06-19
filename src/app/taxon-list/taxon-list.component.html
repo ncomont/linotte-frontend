@@ -1,0 +1,53 @@
+<div class="panel panel-default panel-table">
+	<app-taxon-filters
+	[initialFilters]="this.initialFilters"
+	(search)="onSearch($event)"
+	[displayMode]="this.displayMode"
+	></app-taxon-filters>
+
+	<div class="panel-body">
+		<div class="table-responsive noSwipe">
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th style="width:10%;">Rang</th>
+						<th>Nom Complet</th>
+						<th>Nom Vernaculaire</th>
+						<th>Groupe Vernaculaire</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr
+						*ngFor="let taxon of this.page"
+						[ngClass]="{'reference': taxon.id === taxon.referenceId}"
+						(click)="pick.emit(this.taxon)"
+					>
+						<td class="cell-detail">
+							<span class="badge badge-pill badge-default">{{ this.taxon.rank }}</span>
+						</td>
+						<td class="cell-detail">
+							<span>{{ this.taxon.name }}</span>
+							<span class="cell-detail-description">{{ this.taxon.author }}</span>
+						</td>
+						<td class="cell-detail">
+							<span>{{ this.taxon.vernacularName }}</span>
+						</td>
+						<td class="cell-detail">
+							<span>{{ this.taxon.vernacularGroups }}</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row mai-datatable-footer">
+		<div class="col-sm-12">
+			<div class="dataTables_paginate paging_simple_numbers">
+				<app-taxon-paginator
+					(previousPage)="previousPage.emit()"
+					(nextPage)="nextPage.emit()"
+				></app-taxon-paginator>
+			</div>
+		</div>
+	</div>
+</div>

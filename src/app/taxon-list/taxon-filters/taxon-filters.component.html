@@ -1,0 +1,28 @@
+<div class="row table-filters-container">
+	<div class="col-12 table-filters"><span class="table-filter-title">Taxon</span>
+		<div class="filter-container">
+			<input id="term-filter" type="text" [(ngModel)]="term" name="term" class="form-control">
+		</div>
+	</div>
+
+	<div *ngIf="this.displayMode === TaxonListDisplayMode.Full" class="col-4 table-filters">
+		<span class="table-filter-title">Filtres</span>
+		<div class="filter-container">
+			<form>
+				<div class="custom-controls-stacked">
+					<label class="custom-control custom-checkbox">
+						<input id="reference-filter" type="checkbox" [checked]="reference" (change)="reference = !reference" class="custom-control-input">
+						<span class="custom-control-indicator"></span>
+						<span class="custom-control-description">Limiter aux taxons de référence</span>
+					</label>
+
+					<label class="custom-control custom-checkbox">
+						<input id="rank-filter" type="checkbox" [checked]="restrict" (change)="restrict = !restrict" class="custom-control-input">
+						<span class="custom-control-indicator"></span>
+						<span class="custom-control-description">Limiter aux rangs usuels</span>
+					</label>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

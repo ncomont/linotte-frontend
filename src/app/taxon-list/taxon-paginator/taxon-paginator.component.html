@@ -1,0 +1,14 @@
+<nav>
+	<ul class="pagination justify-content-end">
+		<li class="page-item">
+			<button (click)="previousPage.emit()" aria-label="Page précédente" class="previous-page page-link">
+				Précédent
+			</button>
+		</li>
+		<li class="page-item">
+			<button (click)="nextPage.emit()" aria-label="Page suivante" class="next-page page-link">
+				Suivant
+			</button>
+		</li>
+	</ul>
+</nav>

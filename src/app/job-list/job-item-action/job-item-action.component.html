@@ -1,0 +1,41 @@
+<button
+	*ngIf="this.actions.length === 1"
+	(click)="this.actions[0].action()"
+	class="btn btn-secondary btn-block"
+>
+	<i
+		[ngClass]="this.actions[0].icon"
+		class="icon icon-left"
+	></i> {{ this.actions[0].label }}
+</button>
+
+<div
+	*ngIf="this.actions.length > 1"
+	class="btn-group btn-hspace"
+>
+	<button
+		(click)="this.actions[0].action()"
+		type="button"
+		class="btn btn-secondary default-action"
+	>
+		<span
+			[ngClass]="this.actions[0].icon"
+			class="icon"
+		></span> {{ this.actions[0].label }}
+	</button>
+	<button
+		type="button"
+		data-toggle="dropdown"
+		class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+	>
+		<span class="s7-angle-down"></span>
+		<span class="sr-only">Toggle Dropdown</span>
+	</button>
+	<div role="menu" class="dropdown-menu dropdown-menu-right">
+		<a
+			*ngFor="let item of this.actions.splice(1, this.actions.length - 1)"
+			(click)="item.action()"
+			class="dropdown-item"
+		>{{ item.label }}</a>
+	</div>
+</div>

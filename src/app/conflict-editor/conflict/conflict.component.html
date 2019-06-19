@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel">
+			<div class="panel-heading panel-heading-color panel-heading-color-danger">
+				<span class="title">Données recherchées</span>
+			</div>
+
+			<div class="cal-container">
+				<div class="cal-notes">
+					<ul>
+						<li *ngFor="let entry of (this.conflict.searchData | keys)">
+							<span class="hour">{{ entry.value }}</span><span class="event-name">{{ entry.key }}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="panel">
+			<div class="panel-heading panel-heading-color panel-heading-color-primary">
+				<span class="title">Taxon sélectionné</span>
+			</div>
+
+			<div *ngIf="this.selectedTaxon" class="cal-container">
+				<div class="cal-notes">
+					<ul>
+						<li>
+							<span class="hour">{{ this.selectedTaxon.id }}</span><span class="event-name">Identifiant</span>
+						</li>
+						<li *ngIf="this.selectedTaxon.vernacularName">
+							<span class="hour">{{ this.selectedTaxon.vernacularName }}</span><span class="event-name">Nom vernaculaire</span>
+						</li>
+						<li *ngIf="this.selectedTaxon.name">
+							<span class="hour">{{ this.selectedTaxon.name }}</span><span class="event-name">Nom</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div *ngIf="!this.selectedTaxon" class="cal-container empty-info">
+				<div class="cal-notes">
+					<i class="s7-info"></i>
+					<h5>Sélectionnez un taxon dans la liste ci-dessous.</h5>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

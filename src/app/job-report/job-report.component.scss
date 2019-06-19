@@ -1,0 +1,11 @@
+@import 'app';
+
+.search-data {
+	margin-bottom: 0;
+	list-style-type: none;
+
+	.field {
+		font-weight: bold;
+		margin-right: 0.5em;
+	}
+}

@@ -1,0 +1,94 @@
+<nav class="navbar navbar-full navbar-inverse navbar-fixed-top mai-top-header">
+	<div class="container">
+		<a href="/" class="navbar-brand">my Linotte</a>
+		<!--Left Menu-->
+		<ul class="nav navbar-nav mai-top-nav">
+			<li class="nav-item">
+				<a routerLink="/mes-jobs" routerLinkActive="active" class="nav-link">Mes jobs</a>
+			</li>
+			<li class="nav-item">
+				<a routerLink="/nouveau-job" routerLinkActive="active" class="nav-link">Ajouter un job</a>
+			</li>
+			<li class="nav-item">
+				<a routerLink="/parcourir-taxref" routerLinkActive="active" class="nav-link">Parcourir Taxref</a>
+			</li>
+		</ul>
+		<!--Icons Menu-->
+		<ul class="navbar-nav float-lg-right mai-icons-nav">
+			<li class="dropdown nav-item mai-notifications">
+				<a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+					<span class="icon s7-bell"></span>
+					<span class="indicator"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li>
+						<div class="title">Notifications</div>
+						<div class="mai-scroller">
+							<div class="content">
+								<ul>
+									<li>
+										<a href="#">
+											<div class="icon">
+												<span class="s7-check"></span>
+											</div>
+											<div class="content">
+												<span class="desc">This is a new message for my dear friend
+													<strong>Rob</strong>.
+												</span>
+												<span class="date">10 minutes ago</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="icon">
+												<span class="s7-add-user"></span>
+											</div>
+											<div class="content">
+												<span class="desc">You have a new fiend request pending from
+													<strong>John Doe</strong>.
+												</span>
+												<span class="date">2 days ago</span>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="icon">
+												<span class="s7-graph1"></span>
+											</div>
+											<div class="content">
+												<span class="desc">Your site visits have increased
+													<strong>15.5%</strong> more since the last week.
+												</span>
+												<span class="date">2 hours ago</span>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer">
+							<a href="#">View all notifications</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<!--User Menu-->
+		<ul *ngIf="this.authed$ | async" class="nav navbar-nav float-lg-right mai-user-nav">
+			<li class="dropdown nav-item">
+				<a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle nav-link">
+					<!-- <img src="http://via.placeholder.com/20x20"> -->
+					<span class="user-name">{{ this.username$ | async }}</span>
+					<span class="angle-down s7-angle-down"></span>
+				</a>
+				<div role="menu" class="dropdown-menu">
+					<a href="#" class="dropdown-item">Mon Compte</a>
+					<a href="#" class="dropdown-item">Paramètres</a>
+					<a href="#" class="dropdown-item">Déconnexion</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>

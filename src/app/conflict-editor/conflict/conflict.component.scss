@@ -1,0 +1,75 @@
+@import 'app';
+
+$conflict-padding: 32px !default;
+
+.row {
+	margin-bottom: 20px;
+
+	.panel {
+		height: 100%;
+	}
+}
+
+.cal-container {
+	.cal-notes {
+		background-color: $light-color;
+		padding: 30px;
+
+		span {
+			display: block;
+
+			&.day {
+				font-size: 2.76923rem;
+				font-weight: 300;
+			}
+
+			&.date {
+				font-size: 15px;
+				font-weight: 300;
+				color: $primary-color;
+			}
+
+			&.title {
+				font-size: 1.38462rem;
+				border-bottom: 1px solid darken($light-color, 15%);
+				margin-top: 1.38462rem;
+				padding-bottom: 0.153846rem;
+			}
+		}
+
+		ul {
+			padding: 0;
+			list-style: none;
+			padding-top: 20px;
+
+			li {
+				padding-bottom: 10px;
+				font-size: $paragraph-size;
+
+				span {
+					display: inline-block;
+
+					&.hour {
+						float: right;
+						color: $primary-color;
+					}
+
+					&.event-name {
+						font-size: $paragraph-size;
+					}
+				}
+
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&.empty-info {
+		text-align: center;
+		font-size: 3em;
+		color: rgba(0, 0, 0, 0.5);
+		padding-top: 40px;
+	}
+}

@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="mai-wrapper">
+	<div class="main-content container" role="main">
+		<div class="row">
+			<div class="col-12">
+				<router-outlet></router-outlet>
+			</div>
+		</div>
+	</div>
+</div>
+
+<app-conflict-editor
+	*ngIf="conflict$ | async; let conflict"
+	[conflict]="conflict"
+
+	[page]="this.page$ | async"
+
+	(validate)="this.onResolveConflict($event)"
+	(search)="this.onSearch($event)"
+	(close)="this.onCloseConflictEditor()"
+	(previousPage)="this.onPreviousPage()"
+	(nextPage)="this.onNextPage()"
+></app-conflict-editor>

@@ -1,0 +1,9 @@
+<div class="panel panel-default panel-table">
+	<app-taxon-list
+		[page]="this.page$ | async"
+		(search)="this.onSearch($event)"
+		(previousPage)="this.onPreviousPage()"
+		(nextPage)="this.onNextPage()"
+		[displayMode]="TaxonListDisplayMode.Full"
+	></app-taxon-list>
+</div>

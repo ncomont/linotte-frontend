@@ -1,0 +1,514 @@
+@import 'app';
+
+.mai-top-header {
+	border: 0;
+	margin-bottom: 0;
+	background-color: $top-header-bg-mobile;
+	padding: 0;
+
+	@include tablet {
+		background-color: $top-header-bg-mobile;
+	}
+
+	> .container {
+		padding: 0;
+		display: flex;
+		align-items: center;
+
+		@include phone {
+			justify-content: space-between;
+		}
+	}
+
+	.dropdown-toggle {
+		// Hide default bootstrap dropdown caret
+		&:after {
+			display: none;
+		}
+	}
+
+	.dropdown-menu {
+		margin-top: 0;
+	}
+
+	// logo
+	.navbar-brand {
+		flex: 0 0 auto;
+		color: $white-color;
+		padding-top: 0;
+		padding-bottom: 0;
+		font-size: 2.5rem;
+		font-weight: $font-weight-light;
+		line-height: $top-header-height;
+		height: $top-header-height;
+		margin-right: $content-padding;
+
+		&-text {
+			background-image: none;
+		}
+
+		@include laptop {
+			flex: 1 1 100%;
+		}
+
+		@include tablet {
+			display: none;
+		}
+
+		@include phone {
+			display: none;
+		}
+	}
+
+	// Logo mobile layout
+	&.mai-top-header-show-logo .navbar-brand {
+		@include tablet {
+			display: inline-block;
+			flex: 1 1;
+			margin-right: 0;
+			margin-left: $logo-mobile-margin;
+		}
+	}
+
+	//Flex direction fix on top header navbars
+	.navbar-nav {
+		flex-direction: row;
+	}
+
+	.mai-top-nav {
+		flex: 1 1;
+
+		@include tablet {
+			display: none;
+		}
+
+		@include phone {
+			display: none;
+		}
+
+		@include laptop {
+			display: none;
+		}
+
+		.nav-link {
+			padding: 0 18px;
+		}
+	}
+
+	.navbar-collapse {
+		padding-right: $content-padding;
+	}
+}
+
+// Icons nav style
+
+.mai-top-header .mai-icons-nav {
+	margin-right: 10px;
+	flex: 0 0 auto;
+
+	@include tablet {
+		order: 2;
+	}
+
+	> .nav-item.dropdown {
+		@include tablet {
+			position: static;
+		}
+
+		@include phone {
+			position: static;
+		}
+
+		> .nav-link {
+			padding: 0 9px;
+			position: relative;
+
+			.icon {
+				font-size: $icons-nav-icons-size;
+				vertical-align: middle;
+				color: $light-color;
+			}
+
+			.indicator {
+				background-color: $light-color;
+				border-radius: 50%;
+				display: block;
+				height: 6px;
+				width: 6px;
+				position: absolute;
+				top: 19px;
+				right: 7px;
+			}
+
+			&:hover {
+				.icon {
+					color: $light-color;
+				}
+			}
+		}
+
+		&.show,
+		&.show:hover {
+			> a {
+				background-color: transparent;
+
+				.icon {
+					color: $light-color;
+				}
+
+				&:after {
+					position: absolute;
+					content: '';
+					display: inline-block;
+					border-bottom: 10px solid lighten($dark-color, 3.5%);
+					border-left: 10px solid transparent;
+					border-right: 10px solid transparent;
+					border-top: 0;
+					right: 50%;
+					bottom: -1px;
+					margin-right: -10px;
+				}
+			}
+		}
+	}
+
+	.mai-notifications {
+		> .dropdown-menu {
+			width: $icons-nav-dropdown-width;
+			border-radius: 5px;
+			left: auto;
+			margin-right: -($icons-nav-dropdown-width / 2);
+			right: 50%;
+			padding: 0;
+
+			@include tablet {
+				right: 0;
+				margin-right: 0;
+			}
+
+			@include phone {
+				width: 100%;
+				left: 0;
+			}
+
+			.title {
+				font-family: $raleway;
+				font-size: 1.154rem;
+				color: lighten($dark-color, 38.5%);
+				background-color: lighten($dark-color, 3.5%);
+				text-align: center;
+				padding: 14px 0 14px;
+			}
+
+			.footer {
+				a {
+					font-family: $raleway;
+					font-size: 1rem;
+					color: lighten($dark-color, 38.5%);
+					background-color: lighten($dark-color, 3.5%);
+					text-align: center;
+					padding: 10px 0 10px;
+					display: block;
+
+					&:hover {
+						background-color: lighten($dark-color, 2.5%);
+						color: lighten($dark-color, 50%);
+					}
+				}
+			}
+		}
+	}
+
+	.mai-notifications {
+		.mai-scroller {
+			position: relative;
+			height: 252px;
+
+			> .content {
+				> ul {
+					list-style: none;
+					padding-left: 0;
+
+					> li {
+						overflow: hidden;
+						border-bottom: 1px solid lighten($dark-color, 6%);
+						background-color: lighten($dark-color, 4.5%);
+
+						> a {
+							padding: 15px;
+							display: block;
+							overflow: hidden;
+
+							.icon,
+							.img {
+								margin-top: 3px;
+								height: 36px;
+								width: 36px;
+								border-radius: 50%;
+								background-color: darken($dark-color, 1.5%);
+								float: left;
+								text-align: center;
+
+								> span {
+									font-size: 1.846rem;
+									color: $primary-color;
+									line-height: 34px;
+								}
+							}
+
+							.content {
+								padding-left: 50px;
+								line-height: 14px;
+
+								.desc {
+									color: lighten($dark-color, 60%);
+									font-size: 1rem;
+									line-height: 17px;
+
+									strong {
+										font-weight: 600;
+									}
+								}
+
+								.date {
+									color: darken($white-color, 45.7%);
+									display: block;
+									font-size: 0.9231rem;
+									font-style: italic;
+									font-weight: 300;
+									margin-top: 5px;
+								}
+							}
+						}
+
+						&:hover {
+							background-color: darken($primary-color, 2%);
+
+							> a {
+								color: $white-color;
+
+								.icon {
+									background-color: darken($primary-color, 6%);
+
+									> span {
+										color: $white-color;
+									}
+								}
+
+								.content {
+									.desc {
+										color: $white-color;
+									}
+
+									.date {
+										color: darken($primary-color, 17%);
+									}
+								}
+							}
+						}
+
+						&:last-child {
+							border-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Logo mobile layout
+.mai-top-header-show-logo .mai-icons-nav {
+	@include tablet {
+		display: none;
+	}
+}
+
+// Left navbar style
+
+.mai-top-header .navbar-nav {
+	> .nav-item {
+		& + .nav-item {
+			margin-left: 0;
+		}
+
+		> .nav-link {
+			line-height: $top-header-height;
+			font-family: $raleway;
+			padding: 0 18px;
+			outline: none;
+
+			@include tablet {
+				line-height: $top-header-height-responsive;
+			}
+		}
+
+		&.dropdown {
+			> a {
+				.angle-down {
+					position: relative;
+					font-size: 2.077rem;
+					vertical-align: middle;
+					width: 27px;
+					display: inline-block;
+					line-height: inherit;
+				}
+			}
+
+			.dropdown-menu {
+				border: 0;
+				border-radius: 0 0 3px 3px;
+				box-shadow: none;
+				background-color: $dark-color;
+				min-width: $top-header-dropdown-min-width;
+
+				> .dropdown-item {
+					font-size: 1rem;
+					color: $top-header-dropdown-color;
+					padding: 9px 20px;
+					min-width: 175px;
+					font-family: $raleway;
+
+					&:hover {
+						background-color: darken($primary-color, 3%);
+						color: $white-color;
+					}
+
+					&:focus {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+}
+
+// User nav style
+.mai-user-nav {
+	flex: 0 0 auto;
+
+	@include tablet {
+		flex: 1 1 100%;
+		order: 1;
+	}
+
+	@include phone {
+		flex: 0 1 auto;
+		overflow: hidden;
+	}
+
+	.mai-top-header-show-logo & {
+		@include tablet {
+			flex: 0 1 auto;
+			margin-right: 20px;
+		}
+
+		@include phone {
+			flex: 0 1 auto;
+			margin-right: 20px;
+		}
+	}
+
+	> .nav-item.dropdown {
+		@include phone {
+			width: 100%;
+		}
+
+		&.show,
+		&.show:hover {
+			> a {
+				.angle-down {
+					&:after {
+						position: absolute;
+						content: '';
+						display: inline-block;
+						border-bottom: 10px solid $dark-color;
+						border-left: 10px solid transparent;
+						border-right: 10px solid transparent;
+						border-top: 0;
+						right: 50%;
+						bottom: 0;
+						margin-right: -10px;
+					}
+				}
+			}
+		}
+
+		> .nav-link {
+			color: $white-color;
+			padding-right: 0;
+			font-size: 1.231rem;
+
+			@include tablet {
+				display: flex;
+				align-items: center;
+			}
+
+			@include phone {
+				display: flex;
+				align-items: center;
+			}
+
+			img {
+				max-width: 30px;
+				max-height: 30px;
+				border-radius: 3px;
+
+				@include tablet {
+					flex: 0 0 auto;
+				}
+
+				@include phone {
+					flex: 0 0 auto;
+				}
+			}
+
+			.user-name {
+				margin-left: 10px;
+
+				.mai-top-header-show-logo & {
+					@include tablet {
+						display: none;
+					}
+				}
+
+				@include phone {
+					flex: 1 1 100%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+				@include tablet {
+					flex: 1 1 100%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+
+		.mai-top-header-show-logo & .dropdown-menu {
+			@include phone {
+				left: auto;
+				right: 10px;
+			}
+		}
+
+		.dropdown-menu {
+			@include phone {
+				position: fixed;
+				top: $top-header-height-responsive;
+			}
+
+			.dropdown-item {
+				.icon {
+					font-size: 1.538rem;
+					vertical-align: middle;
+				}
+			}
+
+			&:after {
+				left: auto;
+				right: 20px;
+			}
+		}
+	}
+}

@@ -1,0 +1,78 @@
+@import 'app';
+
+:host {
+	max-width: 200px;
+	display: block;
+}
+
+.status-badge {
+	> span {
+		display: inline-block;
+		color: darken($light-color, 40%);
+	}
+
+	.badge {
+		color: white;
+		width: 15px;
+		height: 15px;
+		margin-right: 5px;
+	}
+}
+
+.status-label {
+	display: none;
+}
+
+.status-progress {
+	position: relative;
+
+	span {
+		margin-bottom: 0;
+		display: block;
+		font-size: 0.846154rem;
+		color: darken($light-color, 40%);
+	}
+
+	.spinner-container {
+		width: 16px;
+		height: 16px;
+		position: relative;
+		display: inline-block;
+	}
+
+	.progress-text {
+		position: relative;
+
+		display: inline-block;
+		margin-bottom: 0.461538rem;
+	}
+}
+
+#loading-bar-spinner.spinner {
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+	position: absolute;
+	z-index: 19 !important;
+	animation: loading-bar-spinner 1s linear infinite;
+}
+
+#loading-bar-spinner.spinner .spinner-icon {
+	width: 16px;
+	height: 16px;
+	border: solid 3px transparent;
+	border-top-color: #00c8b1 !important;
+	border-left-color: #00c8b1 !important;
+	border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

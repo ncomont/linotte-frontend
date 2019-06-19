@@ -1,0 +1,32 @@
+<div *ngIf="this.job.status.passed" class="status-badge">
+	<span class="badge badge-pill badge-primary" title="Terminé"></span>
+</div>
+
+<div *ngIf="this.job.status.new" class="status-badge">
+	<span class="badge badge-pill badge-dark" title="Nouveau"></span>
+</div>
+
+<div *ngIf="this.job.status.warning" class="status-badge">
+	<span class="badge badge-pill badge-warning" title="Conflits"></span>
+</div>
+
+<div *ngIf="this.job.status.error" class="status-badge">
+	<span class="badge badge-pill badge-danger" title="Erreur"></span>
+</div>
+
+<div *ngIf="this.job.status.pending" class="status-progress">
+	<div class="spinner-container">
+		<div id="loading-bar-spinner" class="spinner pending" title="En cours">
+			<div class="spinner-icon"></div>
+		</div>
+	</div>
+</div>
+
+
+<div *ngIf="this.job.status.stacked" class="status-progress">
+	<div class="spinner-container">
+		<div id="loading-bar-spinner" class="spinner stacked" title="En attente">
+			<div class="spinner-icon"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+<div class="overlay"></div>
+<div class="panel">
+	<div class="panel-heading panel-heading-color panel-heading-color-dark">
+		<div class="tools">
+			<span (click)="close.emit()" class="icon s7-close"></span>
+		</div>
+		Résoudre manuellement un conflit
+		<span class="panel-subtitle">Avec cet outil, rattachez manuellement les données non trouvées avec un élément de Taxref</span>
+	</div>
+
+	<div class="panel-body">
+		<app-conflict
+			[conflict]="this.conflict"
+			[selectedTaxon]="this.selectedTaxon"
+		></app-conflict>
+		<app-taxon-list
+			*ngIf="!this.selectedTaxon"
+			[page]="this.page"
+			[initialFilters]="this.filters"
+
+			(pick)="onPick($event)"
+			(search)="search.emit($event)"
+			(previousPage)="previousPage.emit()"
+			(nextPage)="nextPage.emit()"
+
+			[displayMode]="TaxonListDisplayMode.Simple"
+		></app-taxon-list>
+	</div>
+
+	<div *ngIf="this.selectedTaxon" class="row">
+		<div class="col-md-12">
+			<p class="text-right actions">
+				<button (click)="this.reset()" class="btn btn-space">Annuler</button>
+				<button (click)="validate.emit({conflict: this.conflict, taxon: this.selectedTaxon})" class="btn btn-space btn-primary">Valider</button>
+			</p>
+		</div>
+	</div>
+</div>

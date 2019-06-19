@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+	<div class="panel-heading panel-heading-divider">
+		Télécharger le fichier type
+		<span class="panel-subtitle">Il s’agit du fichier vierge au format demandé par l’Etat</span>
+	</div>
+	<div class="panel-body">
+		<p>
+			Comment compléter le fichier ? Voir le document d’aide officiel pour remplir les champs exigés.
+		</p>
+		<p>
+			Remplissez les champs obligatoires et les champs facultatifs souhaités. Afin de lier vos données à l’identifiant Taxref,
+			renseignez à minima le champ nom scientifique ou nom vernaculaire. À partir de ce champ, l’outil fera la liaison avec les
+			informations taxonomiques contenues dans Taxref puis transformera vos données au format demandé par l’Etat.
+		</p>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading panel-heading-divider">
+		Créer un nouveau job
+		<span class="panel-subtitle">Ce formulaire vous guidera lors de la création d'un nouveau job de résolution automatique</span>
+	</div>
+	<div class="panel-body">
+		<p>
+			Ce formulaire va vous permettre de créer une nouvelle tâche de liaison automatique de taxons. Vous devez indiquer un nom pour la tâche planifier.
+		</p>
+		<form>
+			<div class="form-group row row">
+				<label class="col-sm-3 col-form-label text-right">Nom de la tâche</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-3 col-form-label text-right">Choisir le fichier</label>
+				<div class="col-6">
+					<input type="file" name="file-2" id="file-2" data-multiple-caption="{count} files selected" multiple class="inputfile">
+					<label for="file-2" class="btn btn-primary"> <i class="icon s7-upload"></i><span>Parcourir ...</span></label>
+				</div>
+			</div>
+
+			<div class="row mt-12">
+				<div class="col-12">
+					<p class="text-right">
+						<button type="submit" class="btn btn-space btn-primary">Créer le job</button>
+					</p>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

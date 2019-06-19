@@ -1,0 +1,63 @@
+<div class="row">
+	<div class="col-md-4">
+		<div (click)="changeState.emit('RESOLVED')" id="resolved-filter" class="usage usage-info">
+			<div class="usage-head"><span class="usage-head-title">Résolus</span>
+			</div>
+			<div class="usage-resume">
+				<div class="usage-data">
+					<span
+						*ngIf="this.stats$ | async"
+						data-toggle="counter"
+						data-end="167"
+						data-decimals="1"
+						data-suffix="%"
+						class="usage-counter"
+					>{{ (this.stats$ | async)?.resolved }}</span>
+				</div>
+				<div class="usage-icon">
+					<span class="icon s7-check"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div (click)="changeState.emit('NOT_FOUND')" id="not-found-filter" class="usage usage-danger">
+			<div class="usage-head"><span class="usage-head-title">À résoudre</span>
+			</div>
+			<div class="usage-resume">
+				<div class="usage-data">
+					<span
+						data-toggle="counter"
+						data-end="12"
+						data-decimals="1"
+						data-suffix="%"
+						class="usage-counter"
+						>{{ (this.stats$ | async)?.notFound }}</span>
+				</div>
+				<div class="usage-icon">
+					<span class="icon s7-attention"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div (click)="changeState.emit('FOUND')" id="found-filter" class="usage usage-primary">
+			<div class="usage-head"><span class="usage-head-title">Trouvés</span>
+			</div>
+			<div class="usage-resume">
+				<div class="usage-data">
+					<span
+						data-toggle="counter"
+						data-end="12"
+						data-decimals="1"
+						data-suffix="%"
+						class="usage-counter"
+						>{{ (this.stats$ | async)?.found }}</span>
+				</div>
+				<div class="usage-icon">
+					<span class="icon s7-smile"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
