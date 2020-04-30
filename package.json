@@ -26,7 +26,7 @@
 		"@ngrx/store": "^4.0.3",
 		"core-js": "^2.4.1",
 		"eslint": "^4.7.2",
-		"jquery": "^3.2.1",
+		"jquery": "^3.5.0",
 		"ngrx-store-logger": "^0.2.0",
 		"reselect": "^3.0.1",
 		"rxjs": "^5.4.2",
